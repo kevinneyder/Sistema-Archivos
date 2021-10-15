@@ -1,0 +1,36 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateSuperficieAvanceTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('superficie_avance', function (Blueprint $table) {
+            $table->id('codSuperficieAvance');
+            $table->unsignedBigInteger('codRegistroTramite');
+            $table->foreign('codRegistroTramite')->references('codRegistroTramite')->on('registro_tramite');
+            $table->unsignedBigInteger('codUnidadTramite');
+            $table->foreign('codUnidadTramite')->references('codUnidadTramite')->on('unidad_tramite');
+            $table->string('superficieAvance');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('superficie_avance');
+    }
+}
