@@ -97,6 +97,7 @@
                     >
                     <Option value="Sacaba">Sacaba</Option>
                     <Option value="Cercado">Cercado</Option>
+                    <Option value="Cercado">Cercado2</Option>
                     <Option value="Norte">Norte</Option>
                   </Select>
                 </FormItem>
