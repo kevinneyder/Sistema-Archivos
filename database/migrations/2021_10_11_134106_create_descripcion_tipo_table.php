@@ -13,12 +13,12 @@ class CreateDescripcionTipoTable extends Migration
      */
     public function up()
     {
-        Schema::create('descripcion_tipo', function (Blueprint $table) {
-            $table->id('codDescripcionTipo');
-            $table->unsignedBigInteger('codRegistroTramite');
-            $table->foreign('codRegistroTramite')->references('codRegistroTramite')->on('registro_tramite');
-            $table->unsignedBigInteger('codTipoTramite');
-            $table->foreign('codTipoTramite')->references('codTipoTramite')->on('tipo_tramite');
+        Schema::create('descripcion_tipos', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('registro_tramite_id');
+            $table->foreign('registro_tramite_id')->references('id')->on('registro_tramites');
+            $table->unsignedBigInteger('tipo_tramite_id');
+            $table->foreign('tipo_tramite_id')->references('id')->on('tipo_tramites');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateDescripcionTipoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('descripcion_tipo');
+        Schema::dropIfExists('descripcion_tipos');
     }
 }

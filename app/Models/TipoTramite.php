@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class TipoTramite extends Model
 {
     use HasFactory;
+    protected $fillable = ['nombre', 'descripcion'];
+
+    function registroTramites()
+    {
+        return $this->belongsToMany(RegistroTramite::class, 'descripcion_tipos');
+    }
 }

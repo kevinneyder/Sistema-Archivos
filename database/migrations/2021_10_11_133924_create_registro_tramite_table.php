@@ -13,9 +13,10 @@ class CreateRegistroTramiteTable extends Migration
      */
     public function up()
     {
-        Schema::create('registro_tramite', function (Blueprint $table) {
-            $table->id('codRegistroTramite');
-            $table->string('registroOrden');
+        Schema::create('registro_tramites', function (Blueprint $table) {
+            // $table->id('codRegistroTramite');
+            $table->id();
+            $table->bigInteger('registroOrden');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateRegistroTramiteTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('registro_tramite');
+        Schema::dropIfExists('registro_tramites');
     }
 }

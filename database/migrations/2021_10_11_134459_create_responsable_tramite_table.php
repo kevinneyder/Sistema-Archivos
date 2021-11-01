@@ -13,10 +13,10 @@ class CreateResponsableTramiteTable extends Migration
      */
     public function up()
     {
-        Schema::create('responsable_tramite', function (Blueprint $table) {
-            $table->id('codResponsableTramite');
-            $table->unsignedBigInteger('codRegistroTramite');
-            $table->foreign('codRegistroTramite')->references('codRegistroTramite')->on('registro_tramite');
+        Schema::create('responsable_tramites', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('registro_tramite_id');
+            $table->foreign('registro_tramite_id')->references('id')->on('registro_tramites');
             $table->string('nombreResponsable');
             $table->timestamps();
         });
@@ -29,6 +29,6 @@ class CreateResponsableTramiteTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('responsable_tramite');
+        Schema::dropIfExists('responsable_tramites');
     }
 }

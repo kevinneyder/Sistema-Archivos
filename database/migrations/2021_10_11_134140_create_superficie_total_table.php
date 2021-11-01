@@ -13,12 +13,12 @@ class CreateSuperficieTotalTable extends Migration
      */
     public function up()
     {
-        Schema::create('superficie_total', function (Blueprint $table) {
-            $table->id('codSuperficieTotal');
-            $table->unsignedBigInteger('codRegistroTramite');
-            $table->foreign('codRegistroTramite')->references('codRegistroTramite')->on('registro_tramite');
-            $table->unsignedBigInteger('codUnidadTramite');
-            $table->foreign('codUnidadTramite')->references('codUnidadTramite')->on('unidad_tramite');
+        Schema::create('superficie_totals', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('registro_tramite_id');
+            $table->foreign('registro_tramite_id')->references('id')->on('registro_tramites');
+            $table->unsignedBigInteger('unidad_tramite_id');
+            $table->foreign('unidad_tramite_id')->references('id')->on('unidad_tramites');
             $table->string('superficieTotal');
             $table->timestamps();
         });
@@ -31,6 +31,6 @@ class CreateSuperficieTotalTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('superficie_total');
+        Schema::dropIfExists('superficie_totals');
     }
 }

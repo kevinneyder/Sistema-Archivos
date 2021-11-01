@@ -13,12 +13,12 @@ class CreateDescripcionPersonaTable extends Migration
      */
     public function up()
     {
-        Schema::create('descripcion_persona', function (Blueprint $table) {
-            $table->id('codDescripcionPersona');
-            $table->unsignedBigInteger('codRegistroTramite');
-            $table->foreign('codRegistroTramite')->references('codRegistroTramite')->on('registro_tramite');
-            $table->unsignedBigInteger('codPersonaTramite');
-            $table->foreign('codPersonaTramite')->references('codPersonaTramite')->on('persona_tramite');
+        Schema::create('descripcion_personas', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('registro_tramite_id');
+            $table->foreign('registro_tramite_id')->references('id')->on('registro_tramites');
+            $table->unsignedBigInteger('persona_tramite_id');
+            $table->foreign('persona_tramite_id')->references('id')->on('persona_tramites');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateDescripcionPersonaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('descripcion_persona');
+        Schema::dropIfExists('descripcion_personas');
     }
 }

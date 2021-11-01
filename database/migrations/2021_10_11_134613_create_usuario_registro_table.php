@@ -13,10 +13,10 @@ class CreateUsuarioRegistroTable extends Migration
      */
     public function up()
     {
-        Schema::create('usuario_registro', function (Blueprint $table) {
-            $table->id('codUsuarioRegistro');
-            $table->unsignedBigInteger('codUsuario');
-            $table->foreign('codUsuario')->references('codUsuario')->on('usuario');
+        Schema::create('usuario_registros', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('usuario_id');
+            $table->foreign('usuario_id')->references('id')->on('usuarios');
             $table->string('horaIngreso');
             $table->string('fechaIngreso');
             $table->string('horaSalida');
@@ -32,6 +32,6 @@ class CreateUsuarioRegistroTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('usuario_registro');
+        Schema::dropIfExists('usuario_registros');
     }
 }

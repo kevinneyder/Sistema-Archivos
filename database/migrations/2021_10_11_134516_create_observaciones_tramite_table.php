@@ -13,10 +13,10 @@ class CreateObservacionesTramiteTable extends Migration
      */
     public function up()
     {
-        Schema::create('observaciones_tramite', function (Blueprint $table) {
-            $table->id('codObservacionesTramite');
-            $table->unsignedBigInteger('codRegistroTramite');
-            $table->foreign('codRegistroTramite')->references('codRegistroTramite')->on('registro_tramite');
+        Schema::create('observaciones_tramites', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('registro_tramite_id');
+            $table->foreign('registro_tramite_id')->references('id')->on('registro_tramites');
             $table->string('observacion');
             $table->timestamps();
         });
@@ -29,6 +29,6 @@ class CreateObservacionesTramiteTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('observaciones_tramite');
+        Schema::dropIfExists('observaciones_tramites');
     }
 }

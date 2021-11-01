@@ -13,9 +13,9 @@ class CreatePersonaTramiteTable extends Migration
      */
     public function up()
     {
-        Schema::create('persona_tramite', function (Blueprint $table) {
-            $table->id('codPersonaTramite');
-            $table->string('identificacion');
+        Schema::create('persona_tramites', function (Blueprint $table) {
+            $table->id();
+            $table->string('identificacion')->nullable();
             $table->string('nombre');
             $table->timestamps();
         });
@@ -28,6 +28,6 @@ class CreatePersonaTramiteTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('persona_tramite');
+        Schema::dropIfExists('persona_tramites');
     }
 }

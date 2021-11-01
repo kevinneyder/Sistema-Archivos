@@ -13,10 +13,10 @@ class CreateZonaTramiteTable extends Migration
      */
     public function up()
     {
-        Schema::create('zona_tramite', function (Blueprint $table) {
-            $table->id('codZonaTramite');
+        Schema::create('zona_tramites', function (Blueprint $table) {
+            $table->id();
             $table->string('abreviatura');
-            $table->string('nombre');
+            $table->string('nombre')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateZonaTramiteTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('zona_tramite');
+        Schema::dropIfExists('zona_tramites');
     }
 }

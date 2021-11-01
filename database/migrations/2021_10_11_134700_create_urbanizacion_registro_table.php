@@ -13,10 +13,10 @@ class CreateUrbanizacionRegistroTable extends Migration
      */
     public function up()
     {
-        Schema::create('urbanizacion_registro', function (Blueprint $table) {
-            $table->id('codUrbanizacionNombre');
-            $table->unsignedBigInteger('codUrbanizacionTramite');
-            $table->foreign('codUrbanizacionTramite')->references('codUrbanizacionTramite')->on('urbanizacion_tramite');
+        Schema::create('urbanizacion_registros', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('urbanizacion_tramite_id');
+            $table->foreign('urbanizacion_tramite_id')->references('id')->on('urbanizacion_tramites');
             $table->string('nombre');
             $table->string('resolucion');
             $table->string('fecha');
@@ -33,6 +33,6 @@ class CreateUrbanizacionRegistroTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('urbanizacion_registro');
+        Schema::dropIfExists('urbanizacion_registros');
     }
 }

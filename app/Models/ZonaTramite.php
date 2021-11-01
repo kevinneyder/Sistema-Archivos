@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class ZonaTramite extends Model
 {
     use HasFactory;
+    protected $fillable = ['abreviatura', 'nombre'];
+
+    function registroTramites()
+    {
+        return $this->belongsToMany(RegistroTramite::class, 'descripcion_zonas');
+    }
 }

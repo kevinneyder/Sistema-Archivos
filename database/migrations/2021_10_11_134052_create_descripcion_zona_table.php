@@ -13,12 +13,12 @@ class CreateDescripcionZonaTable extends Migration
      */
     public function up()
     {
-        Schema::create('descripcion_zona', function (Blueprint $table) {
-            $table->id('codDescripcionZona');
-            $table->unsignedBigInteger('codRegistroTramite');
-            $table->foreign('codRegistroTramite')->references('codRegistroTramite')->on('registro_tramite');
-            $table->unsignedBigInteger('codZonaTramite');
-            $table->foreign('codZonaTramite')->references('codZonaTramite')->on('zona_tramite');
+        Schema::create('descripcion_zonas', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('registro_tramite_id');
+            $table->foreign('registro_tramite_id')->references('id')->on('registro_tramites');
+            $table->unsignedBigInteger('zona_tramite_id');
+            $table->foreign('zona_tramite_id')->references('id')->on('zona_tramites');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateDescripcionZonaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('descripcion_zona');
+        Schema::dropIfExists('descripcion_zonas');
     }
 }

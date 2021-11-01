@@ -13,10 +13,10 @@ class CreateFolderTramiteTable extends Migration
      */
     public function up()
     {
-        Schema::create('folder_tramite', function (Blueprint $table) {
-            $table->id('codFolderTramite');
-            $table->unsignedBigInteger('codRegistroTramite');
-            $table->foreign('codRegistroTramite')->references('codRegistroTramite')->on('registro_tramite');
+        Schema::create('folder_tramites', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('registro_tramite_id');
+            $table->foreign('registro_tramite_id')->references('id')->on('registro_tramites');
             $table->string('numeroFolder');
             $table->timestamps();
         });
@@ -29,6 +29,6 @@ class CreateFolderTramiteTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('folder_tramite');
+        Schema::dropIfExists('folder_tramites');
     }
 }

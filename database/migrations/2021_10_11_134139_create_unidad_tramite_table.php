@@ -13,8 +13,8 @@ class CreateUnidadTramiteTable extends Migration
      */
     public function up()
     {
-        Schema::create('unidad_tramite', function (Blueprint $table) {
-            $table->id('codUnidadTramite');
+        Schema::create('unidad_tramites', function (Blueprint $table) {
+            $table->id();
             $table->string('unidad');
             $table->string('descripcion');
             $table->timestamps();
@@ -28,6 +28,6 @@ class CreateUnidadTramiteTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('unidad_tramite');
+        Schema::dropIfExists('unidad_tramites');
     }
 }

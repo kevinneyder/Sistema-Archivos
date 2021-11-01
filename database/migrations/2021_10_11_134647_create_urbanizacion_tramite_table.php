@@ -13,8 +13,8 @@ class CreateUrbanizacionTramiteTable extends Migration
      */
     public function up()
     {
-        Schema::create('urbanizacion_tramite', function (Blueprint $table) {
-            $table->id('codUrbanizacionTramite');
+        Schema::create('urbanizacion_tramites', function (Blueprint $table) {
+            $table->id();
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ class CreateUrbanizacionTramiteTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('urbanizacion_tramite');
+        Schema::dropIfExists('urbanizacion_tramites');
     }
 }

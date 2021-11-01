@@ -13,10 +13,10 @@ class CreateResolucionTramiteTable extends Migration
      */
     public function up()
     {
-        Schema::create('resolucion_tramite', function (Blueprint $table) {
-            $table->id('codResolucionTramite');
-            $table->unsignedBigInteger('codRegistroTramite');
-            $table->foreign('codRegistroTramite')->references('codRegistroTramite')->on('registro_tramite');
+        Schema::create('resolucion_tramites', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('registro_tramite_id');
+            $table->foreign('registro_tramite_id')->references('id')->on('registro_tramites');
             $table->string('registroResolucion');
             $table->timestamps();
         });
@@ -29,6 +29,6 @@ class CreateResolucionTramiteTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('resolucion_tramite');
+        Schema::dropIfExists('resolucion_tramites');
     }
 }

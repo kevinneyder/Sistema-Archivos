@@ -1,6 +1,17 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./node_modules/@babel/runtime/regenerator/index.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
+  \**********************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/regenerator-runtime/runtime.js");
+
+
+/***/ }),
+
 /***/ "./node_modules/axios/index.js":
 /*!*************************************!*\
   !*** ./node_modules/axios/index.js ***!
@@ -2140,6 +2151,112 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2298,13 +2415,141 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  // data() {
+  //   return {
+  //     data: {
+  //       nroTramite: "",
+  //       nombresApellido: "",
+  //     },
+  //     modalActive: false,
+  //     isAdding: false,
+  //   };
+  // },
+  // methods: {
+  //   async addArchivo() {
+  //     if (this.data.nroTramite.trim() == "") return this.e("Ingrese un nombre");
+  //     const res = await this.callApi("post", "app/nuevoArchivo", this.data);
+  //     if (res.status === 201) {
+  //       this.s("Archivo creado correctamente");
+  //       this.modalActive = false;
+  //     } else {
+  //       this.swr();
+  //     }
+  //   },
+  //   async created() {
+  //     const res = await this.callApi("get", "app/getArchivo");
+  //     if (res.status === 200) {
+  //       this.nroTramite = res.data;
+  //     } else {
+  //       this.swr();
+  //     }
+  //   },
+  // },
+  name: "Archivos",
   data: function data() {
     return {
-      data: {
-        nroArchivo: ""
+      archivos: [],
+      modalActive: false,
+      isAdding: false,
+      registroPersona: {
+        identificacion: "-",
+        nombre: ""
       },
-      modalActive: false
+      tipoTramite: {
+        nombre: ""
+      },
+      folderTramite: {
+        numeroFolder: ""
+      },
+      numeroTramite: {
+        numero: ""
+      },
+      zonaTramite: {
+        abreviatura: "--",
+        nombre: ""
+      },
+      unidadTramite: {
+        unidad: "m2",
+        descripcion: "metros cuadrados",
+        superficieTotal: "",
+        superficieAfectada: "",
+        superficieAvance: "",
+        superficieAreaVerde: ""
+      },
+      catastroTramite: {
+        codigoCatastral: ""
+      },
+      fechaResolucion: {
+        fecha: ""
+      },
+      resolucionTramite: {
+        registroResolucion: ""
+      },
+      responsableTramite: {
+        nombreResponsable: ""
+      },
+      observacionesTramite: {
+        observacion: ""
+      },
+      planoTramite: {
+        codigoPlano: "1",
+        nombrePlano: "plano1",
+        planoTramite: "imagenPlano"
+      }
     };
+  },
+  mounted: function mounted() {
+    this.mostrarArchivos();
+  },
+  methods: {
+    mostrarArchivos: function mostrarArchivos() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return _this.axios.get("api/registroTramite").then(function (response) {
+                  console.log(response.data[5]);
+                  _this.archivos = response.data;
+                })["catch"](function (error) {
+                  console.log(error, "------------");
+                  _this.archivos = [];
+                });
+
+              case 2:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    },
+    registrarTramite: function registrarTramite() {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return _this2.axios.all([axios.post("api/registroTramite"), axios.post("api/registroNumeroTramite", _this2.numeroTramite), axios.post("api/registroZonaTramite", _this2.zonaTramite), axios.post("api/registroTipoTramite", _this2.tipoTramite), axios.post("api/registroPersonaTramite", _this2.registroPersona), axios.post("api/registroUnidadTramite", _this2.unidadTramite), axios.post("api/registroFolderTramite", _this2.folderTramite), axios.post("api/registroCatastroTramite", _this2.catastroTramite), axios.post("api/registroFechaResolucion", _this2.fechaResolucion), axios.post("api/registroResolucionTramite", _this2.resolucionTramite), axios.post("api/registroResponsableTramite", _this2.responsableTramite), axios.post("api/registroObservacionesTramite", _this2.observacionesTramite), axios.post("api/registroPlanoTramite", _this2.planoTramite)]).then(function (response) {
+                  _this2.modalActive = false, _this2.$router.go();
+                })["catch"](function (error) {
+                  console.log(error);
+                });
+
+              case 2:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))();
+    }
   }
 });
 
@@ -2453,6 +2698,102 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/js/common.js":
+/*!********************************!*\
+  !*** ./resources/js/common.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+// import { mapGetters } from 'vuex'
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {};
+  },
+  methods: {
+    callApi: function callApi(method, url, dataObj) {
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.prev = 0;
+                _context.next = 3;
+                return axios({
+                  method: method,
+                  url: url,
+                  data: dataObj
+                });
+
+              case 3:
+                return _context.abrupt("return", _context.sent);
+
+              case 6:
+                _context.prev = 6;
+                _context.t0 = _context["catch"](0);
+                return _context.abrupt("return", _context.t0.response);
+
+              case 9:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, null, [[0, 6]]);
+      }))();
+    },
+    i: function i(desc) {
+      var title = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "Hey";
+      this.$Notice.info({
+        title: title,
+        desc: desc
+      });
+    },
+    s: function s(desc) {
+      var title = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "Great!";
+      this.$Notice.success({
+        title: title,
+        desc: desc
+      });
+    },
+    w: function w(desc) {
+      var title = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "Oops!";
+      this.$Notice.warning({
+        title: title,
+        desc: desc
+      });
+    },
+    e: function e(desc) {
+      var title = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "Oops!";
+      this.$Notice.error({
+        title: title,
+        desc: desc
+      });
+    },
+    swr: function swr() {
+      var desc = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Intente nuevamente.';
+      var title = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "Oops";
+      this.$Notice.error({
+        title: title,
+        desc: desc
+      });
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./resources/js/routes/routes.js":
 /*!***************************************!*\
   !*** ./resources/js/routes/routes.js ***!
@@ -2473,18 +2814,24 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+ // import nuevoArchivoPage from '../components/pages/NuevoArchivo/NuevoArchivo.vue';
 
 vue__WEBPACK_IMPORTED_MODULE_3__["default"].use(vue_router__WEBPACK_IMPORTED_MODULE_4__["default"]);
 var routes = [{
   path: '/home',
   component: _components_pages_HomePage_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
 }, {
+  name: 'archivos',
   path: '/menu',
   component: _components_pages_MenuPage_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
 }, {
   path: '/planos',
   component: _components_pages_PlanosPage_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
-}];
+} // {
+//     path: '/nuevoArchivo',
+//     component: nuevoArchivoPage
+// }
+];
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new vue_router__WEBPACK_IMPORTED_MODULE_4__["default"]({
   mode: 'history',
   routes: routes
@@ -20113,6 +20460,770 @@ process.chdir = function (dir) {
     throw new Error('process.chdir is not supported');
 };
 process.umask = function() { return 0; };
+
+
+/***/ }),
+
+/***/ "./node_modules/regenerator-runtime/runtime.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/regenerator-runtime/runtime.js ***!
+  \*****************************************************/
+/***/ ((module) => {
+
+/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+var runtime = (function (exports) {
+  "use strict";
+
+  var Op = Object.prototype;
+  var hasOwn = Op.hasOwnProperty;
+  var undefined; // More compressible than void 0.
+  var $Symbol = typeof Symbol === "function" ? Symbol : {};
+  var iteratorSymbol = $Symbol.iterator || "@@iterator";
+  var asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator";
+  var toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag";
+
+  function define(obj, key, value) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+    return obj[key];
+  }
+  try {
+    // IE 8 has a broken Object.defineProperty that only works on DOM objects.
+    define({}, "");
+  } catch (err) {
+    define = function(obj, key, value) {
+      return obj[key] = value;
+    };
+  }
+
+  function wrap(innerFn, outerFn, self, tryLocsList) {
+    // If outerFn provided and outerFn.prototype is a Generator, then outerFn.prototype instanceof Generator.
+    var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator;
+    var generator = Object.create(protoGenerator.prototype);
+    var context = new Context(tryLocsList || []);
+
+    // The ._invoke method unifies the implementations of the .next,
+    // .throw, and .return methods.
+    generator._invoke = makeInvokeMethod(innerFn, self, context);
+
+    return generator;
+  }
+  exports.wrap = wrap;
+
+  // Try/catch helper to minimize deoptimizations. Returns a completion
+  // record like context.tryEntries[i].completion. This interface could
+  // have been (and was previously) designed to take a closure to be
+  // invoked without arguments, but in all the cases we care about we
+  // already have an existing method we want to call, so there's no need
+  // to create a new function object. We can even get away with assuming
+  // the method takes exactly one argument, since that happens to be true
+  // in every case, so we don't have to touch the arguments object. The
+  // only additional allocation required is the completion record, which
+  // has a stable shape and so hopefully should be cheap to allocate.
+  function tryCatch(fn, obj, arg) {
+    try {
+      return { type: "normal", arg: fn.call(obj, arg) };
+    } catch (err) {
+      return { type: "throw", arg: err };
+    }
+  }
+
+  var GenStateSuspendedStart = "suspendedStart";
+  var GenStateSuspendedYield = "suspendedYield";
+  var GenStateExecuting = "executing";
+  var GenStateCompleted = "completed";
+
+  // Returning this object from the innerFn has the same effect as
+  // breaking out of the dispatch switch statement.
+  var ContinueSentinel = {};
+
+  // Dummy constructor functions that we use as the .constructor and
+  // .constructor.prototype properties for functions that return Generator
+  // objects. For full spec compliance, you may wish to configure your
+  // minifier not to mangle the names of these two functions.
+  function Generator() {}
+  function GeneratorFunction() {}
+  function GeneratorFunctionPrototype() {}
+
+  // This is a polyfill for %IteratorPrototype% for environments that
+  // don't natively support it.
+  var IteratorPrototype = {};
+  define(IteratorPrototype, iteratorSymbol, function () {
+    return this;
+  });
+
+  var getProto = Object.getPrototypeOf;
+  var NativeIteratorPrototype = getProto && getProto(getProto(values([])));
+  if (NativeIteratorPrototype &&
+      NativeIteratorPrototype !== Op &&
+      hasOwn.call(NativeIteratorPrototype, iteratorSymbol)) {
+    // This environment has a native %IteratorPrototype%; use it instead
+    // of the polyfill.
+    IteratorPrototype = NativeIteratorPrototype;
+  }
+
+  var Gp = GeneratorFunctionPrototype.prototype =
+    Generator.prototype = Object.create(IteratorPrototype);
+  GeneratorFunction.prototype = GeneratorFunctionPrototype;
+  define(Gp, "constructor", GeneratorFunctionPrototype);
+  define(GeneratorFunctionPrototype, "constructor", GeneratorFunction);
+  GeneratorFunction.displayName = define(
+    GeneratorFunctionPrototype,
+    toStringTagSymbol,
+    "GeneratorFunction"
+  );
+
+  // Helper for defining the .next, .throw, and .return methods of the
+  // Iterator interface in terms of a single ._invoke method.
+  function defineIteratorMethods(prototype) {
+    ["next", "throw", "return"].forEach(function(method) {
+      define(prototype, method, function(arg) {
+        return this._invoke(method, arg);
+      });
+    });
+  }
+
+  exports.isGeneratorFunction = function(genFun) {
+    var ctor = typeof genFun === "function" && genFun.constructor;
+    return ctor
+      ? ctor === GeneratorFunction ||
+        // For the native GeneratorFunction constructor, the best we can
+        // do is to check its .name property.
+        (ctor.displayName || ctor.name) === "GeneratorFunction"
+      : false;
+  };
+
+  exports.mark = function(genFun) {
+    if (Object.setPrototypeOf) {
+      Object.setPrototypeOf(genFun, GeneratorFunctionPrototype);
+    } else {
+      genFun.__proto__ = GeneratorFunctionPrototype;
+      define(genFun, toStringTagSymbol, "GeneratorFunction");
+    }
+    genFun.prototype = Object.create(Gp);
+    return genFun;
+  };
+
+  // Within the body of any async function, `await x` is transformed to
+  // `yield regeneratorRuntime.awrap(x)`, so that the runtime can test
+  // `hasOwn.call(value, "__await")` to determine if the yielded value is
+  // meant to be awaited.
+  exports.awrap = function(arg) {
+    return { __await: arg };
+  };
+
+  function AsyncIterator(generator, PromiseImpl) {
+    function invoke(method, arg, resolve, reject) {
+      var record = tryCatch(generator[method], generator, arg);
+      if (record.type === "throw") {
+        reject(record.arg);
+      } else {
+        var result = record.arg;
+        var value = result.value;
+        if (value &&
+            typeof value === "object" &&
+            hasOwn.call(value, "__await")) {
+          return PromiseImpl.resolve(value.__await).then(function(value) {
+            invoke("next", value, resolve, reject);
+          }, function(err) {
+            invoke("throw", err, resolve, reject);
+          });
+        }
+
+        return PromiseImpl.resolve(value).then(function(unwrapped) {
+          // When a yielded Promise is resolved, its final value becomes
+          // the .value of the Promise<{value,done}> result for the
+          // current iteration.
+          result.value = unwrapped;
+          resolve(result);
+        }, function(error) {
+          // If a rejected Promise was yielded, throw the rejection back
+          // into the async generator function so it can be handled there.
+          return invoke("throw", error, resolve, reject);
+        });
+      }
+    }
+
+    var previousPromise;
+
+    function enqueue(method, arg) {
+      function callInvokeWithMethodAndArg() {
+        return new PromiseImpl(function(resolve, reject) {
+          invoke(method, arg, resolve, reject);
+        });
+      }
+
+      return previousPromise =
+        // If enqueue has been called before, then we want to wait until
+        // all previous Promises have been resolved before calling invoke,
+        // so that results are always delivered in the correct order. If
+        // enqueue has not been called before, then it is important to
+        // call invoke immediately, without waiting on a callback to fire,
+        // so that the async generator function has the opportunity to do
+        // any necessary setup in a predictable way. This predictability
+        // is why the Promise constructor synchronously invokes its
+        // executor callback, and why async functions synchronously
+        // execute code before the first await. Since we implement simple
+        // async functions in terms of async generators, it is especially
+        // important to get this right, even though it requires care.
+        previousPromise ? previousPromise.then(
+          callInvokeWithMethodAndArg,
+          // Avoid propagating failures to Promises returned by later
+          // invocations of the iterator.
+          callInvokeWithMethodAndArg
+        ) : callInvokeWithMethodAndArg();
+    }
+
+    // Define the unified helper method that is used to implement .next,
+    // .throw, and .return (see defineIteratorMethods).
+    this._invoke = enqueue;
+  }
+
+  defineIteratorMethods(AsyncIterator.prototype);
+  define(AsyncIterator.prototype, asyncIteratorSymbol, function () {
+    return this;
+  });
+  exports.AsyncIterator = AsyncIterator;
+
+  // Note that simple async functions are implemented on top of
+  // AsyncIterator objects; they just return a Promise for the value of
+  // the final result produced by the iterator.
+  exports.async = function(innerFn, outerFn, self, tryLocsList, PromiseImpl) {
+    if (PromiseImpl === void 0) PromiseImpl = Promise;
+
+    var iter = new AsyncIterator(
+      wrap(innerFn, outerFn, self, tryLocsList),
+      PromiseImpl
+    );
+
+    return exports.isGeneratorFunction(outerFn)
+      ? iter // If outerFn is a generator, return the full iterator.
+      : iter.next().then(function(result) {
+          return result.done ? result.value : iter.next();
+        });
+  };
+
+  function makeInvokeMethod(innerFn, self, context) {
+    var state = GenStateSuspendedStart;
+
+    return function invoke(method, arg) {
+      if (state === GenStateExecuting) {
+        throw new Error("Generator is already running");
+      }
+
+      if (state === GenStateCompleted) {
+        if (method === "throw") {
+          throw arg;
+        }
+
+        // Be forgiving, per 25.3.3.3.3 of the spec:
+        // https://people.mozilla.org/~jorendorff/es6-draft.html#sec-generatorresume
+        return doneResult();
+      }
+
+      context.method = method;
+      context.arg = arg;
+
+      while (true) {
+        var delegate = context.delegate;
+        if (delegate) {
+          var delegateResult = maybeInvokeDelegate(delegate, context);
+          if (delegateResult) {
+            if (delegateResult === ContinueSentinel) continue;
+            return delegateResult;
+          }
+        }
+
+        if (context.method === "next") {
+          // Setting context._sent for legacy support of Babel's
+          // function.sent implementation.
+          context.sent = context._sent = context.arg;
+
+        } else if (context.method === "throw") {
+          if (state === GenStateSuspendedStart) {
+            state = GenStateCompleted;
+            throw context.arg;
+          }
+
+          context.dispatchException(context.arg);
+
+        } else if (context.method === "return") {
+          context.abrupt("return", context.arg);
+        }
+
+        state = GenStateExecuting;
+
+        var record = tryCatch(innerFn, self, context);
+        if (record.type === "normal") {
+          // If an exception is thrown from innerFn, we leave state ===
+          // GenStateExecuting and loop back for another invocation.
+          state = context.done
+            ? GenStateCompleted
+            : GenStateSuspendedYield;
+
+          if (record.arg === ContinueSentinel) {
+            continue;
+          }
+
+          return {
+            value: record.arg,
+            done: context.done
+          };
+
+        } else if (record.type === "throw") {
+          state = GenStateCompleted;
+          // Dispatch the exception by looping back around to the
+          // context.dispatchException(context.arg) call above.
+          context.method = "throw";
+          context.arg = record.arg;
+        }
+      }
+    };
+  }
+
+  // Call delegate.iterator[context.method](context.arg) and handle the
+  // result, either by returning a { value, done } result from the
+  // delegate iterator, or by modifying context.method and context.arg,
+  // setting context.delegate to null, and returning the ContinueSentinel.
+  function maybeInvokeDelegate(delegate, context) {
+    var method = delegate.iterator[context.method];
+    if (method === undefined) {
+      // A .throw or .return when the delegate iterator has no .throw
+      // method always terminates the yield* loop.
+      context.delegate = null;
+
+      if (context.method === "throw") {
+        // Note: ["return"] must be used for ES3 parsing compatibility.
+        if (delegate.iterator["return"]) {
+          // If the delegate iterator has a return method, give it a
+          // chance to clean up.
+          context.method = "return";
+          context.arg = undefined;
+          maybeInvokeDelegate(delegate, context);
+
+          if (context.method === "throw") {
+            // If maybeInvokeDelegate(context) changed context.method from
+            // "return" to "throw", let that override the TypeError below.
+            return ContinueSentinel;
+          }
+        }
+
+        context.method = "throw";
+        context.arg = new TypeError(
+          "The iterator does not provide a 'throw' method");
+      }
+
+      return ContinueSentinel;
+    }
+
+    var record = tryCatch(method, delegate.iterator, context.arg);
+
+    if (record.type === "throw") {
+      context.method = "throw";
+      context.arg = record.arg;
+      context.delegate = null;
+      return ContinueSentinel;
+    }
+
+    var info = record.arg;
+
+    if (! info) {
+      context.method = "throw";
+      context.arg = new TypeError("iterator result is not an object");
+      context.delegate = null;
+      return ContinueSentinel;
+    }
+
+    if (info.done) {
+      // Assign the result of the finished delegate to the temporary
+      // variable specified by delegate.resultName (see delegateYield).
+      context[delegate.resultName] = info.value;
+
+      // Resume execution at the desired location (see delegateYield).
+      context.next = delegate.nextLoc;
+
+      // If context.method was "throw" but the delegate handled the
+      // exception, let the outer generator proceed normally. If
+      // context.method was "next", forget context.arg since it has been
+      // "consumed" by the delegate iterator. If context.method was
+      // "return", allow the original .return call to continue in the
+      // outer generator.
+      if (context.method !== "return") {
+        context.method = "next";
+        context.arg = undefined;
+      }
+
+    } else {
+      // Re-yield the result returned by the delegate method.
+      return info;
+    }
+
+    // The delegate iterator is finished, so forget it and continue with
+    // the outer generator.
+    context.delegate = null;
+    return ContinueSentinel;
+  }
+
+  // Define Generator.prototype.{next,throw,return} in terms of the
+  // unified ._invoke helper method.
+  defineIteratorMethods(Gp);
+
+  define(Gp, toStringTagSymbol, "Generator");
+
+  // A Generator should always return itself as the iterator object when the
+  // @@iterator function is called on it. Some browsers' implementations of the
+  // iterator prototype chain incorrectly implement this, causing the Generator
+  // object to not be returned from this call. This ensures that doesn't happen.
+  // See https://github.com/facebook/regenerator/issues/274 for more details.
+  define(Gp, iteratorSymbol, function() {
+    return this;
+  });
+
+  define(Gp, "toString", function() {
+    return "[object Generator]";
+  });
+
+  function pushTryEntry(locs) {
+    var entry = { tryLoc: locs[0] };
+
+    if (1 in locs) {
+      entry.catchLoc = locs[1];
+    }
+
+    if (2 in locs) {
+      entry.finallyLoc = locs[2];
+      entry.afterLoc = locs[3];
+    }
+
+    this.tryEntries.push(entry);
+  }
+
+  function resetTryEntry(entry) {
+    var record = entry.completion || {};
+    record.type = "normal";
+    delete record.arg;
+    entry.completion = record;
+  }
+
+  function Context(tryLocsList) {
+    // The root entry object (effectively a try statement without a catch
+    // or a finally block) gives us a place to store values thrown from
+    // locations where there is no enclosing try statement.
+    this.tryEntries = [{ tryLoc: "root" }];
+    tryLocsList.forEach(pushTryEntry, this);
+    this.reset(true);
+  }
+
+  exports.keys = function(object) {
+    var keys = [];
+    for (var key in object) {
+      keys.push(key);
+    }
+    keys.reverse();
+
+    // Rather than returning an object with a next method, we keep
+    // things simple and return the next function itself.
+    return function next() {
+      while (keys.length) {
+        var key = keys.pop();
+        if (key in object) {
+          next.value = key;
+          next.done = false;
+          return next;
+        }
+      }
+
+      // To avoid creating an additional object, we just hang the .value
+      // and .done properties off the next function object itself. This
+      // also ensures that the minifier will not anonymize the function.
+      next.done = true;
+      return next;
+    };
+  };
+
+  function values(iterable) {
+    if (iterable) {
+      var iteratorMethod = iterable[iteratorSymbol];
+      if (iteratorMethod) {
+        return iteratorMethod.call(iterable);
+      }
+
+      if (typeof iterable.next === "function") {
+        return iterable;
+      }
+
+      if (!isNaN(iterable.length)) {
+        var i = -1, next = function next() {
+          while (++i < iterable.length) {
+            if (hasOwn.call(iterable, i)) {
+              next.value = iterable[i];
+              next.done = false;
+              return next;
+            }
+          }
+
+          next.value = undefined;
+          next.done = true;
+
+          return next;
+        };
+
+        return next.next = next;
+      }
+    }
+
+    // Return an iterator with no values.
+    return { next: doneResult };
+  }
+  exports.values = values;
+
+  function doneResult() {
+    return { value: undefined, done: true };
+  }
+
+  Context.prototype = {
+    constructor: Context,
+
+    reset: function(skipTempReset) {
+      this.prev = 0;
+      this.next = 0;
+      // Resetting context._sent for legacy support of Babel's
+      // function.sent implementation.
+      this.sent = this._sent = undefined;
+      this.done = false;
+      this.delegate = null;
+
+      this.method = "next";
+      this.arg = undefined;
+
+      this.tryEntries.forEach(resetTryEntry);
+
+      if (!skipTempReset) {
+        for (var name in this) {
+          // Not sure about the optimal order of these conditions:
+          if (name.charAt(0) === "t" &&
+              hasOwn.call(this, name) &&
+              !isNaN(+name.slice(1))) {
+            this[name] = undefined;
+          }
+        }
+      }
+    },
+
+    stop: function() {
+      this.done = true;
+
+      var rootEntry = this.tryEntries[0];
+      var rootRecord = rootEntry.completion;
+      if (rootRecord.type === "throw") {
+        throw rootRecord.arg;
+      }
+
+      return this.rval;
+    },
+
+    dispatchException: function(exception) {
+      if (this.done) {
+        throw exception;
+      }
+
+      var context = this;
+      function handle(loc, caught) {
+        record.type = "throw";
+        record.arg = exception;
+        context.next = loc;
+
+        if (caught) {
+          // If the dispatched exception was caught by a catch block,
+          // then let that catch block handle the exception normally.
+          context.method = "next";
+          context.arg = undefined;
+        }
+
+        return !! caught;
+      }
+
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        var record = entry.completion;
+
+        if (entry.tryLoc === "root") {
+          // Exception thrown outside of any try block that could handle
+          // it, so set the completion value of the entire function to
+          // throw the exception.
+          return handle("end");
+        }
+
+        if (entry.tryLoc <= this.prev) {
+          var hasCatch = hasOwn.call(entry, "catchLoc");
+          var hasFinally = hasOwn.call(entry, "finallyLoc");
+
+          if (hasCatch && hasFinally) {
+            if (this.prev < entry.catchLoc) {
+              return handle(entry.catchLoc, true);
+            } else if (this.prev < entry.finallyLoc) {
+              return handle(entry.finallyLoc);
+            }
+
+          } else if (hasCatch) {
+            if (this.prev < entry.catchLoc) {
+              return handle(entry.catchLoc, true);
+            }
+
+          } else if (hasFinally) {
+            if (this.prev < entry.finallyLoc) {
+              return handle(entry.finallyLoc);
+            }
+
+          } else {
+            throw new Error("try statement without catch or finally");
+          }
+        }
+      }
+    },
+
+    abrupt: function(type, arg) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.tryLoc <= this.prev &&
+            hasOwn.call(entry, "finallyLoc") &&
+            this.prev < entry.finallyLoc) {
+          var finallyEntry = entry;
+          break;
+        }
+      }
+
+      if (finallyEntry &&
+          (type === "break" ||
+           type === "continue") &&
+          finallyEntry.tryLoc <= arg &&
+          arg <= finallyEntry.finallyLoc) {
+        // Ignore the finally entry if control is not jumping to a
+        // location outside the try/catch block.
+        finallyEntry = null;
+      }
+
+      var record = finallyEntry ? finallyEntry.completion : {};
+      record.type = type;
+      record.arg = arg;
+
+      if (finallyEntry) {
+        this.method = "next";
+        this.next = finallyEntry.finallyLoc;
+        return ContinueSentinel;
+      }
+
+      return this.complete(record);
+    },
+
+    complete: function(record, afterLoc) {
+      if (record.type === "throw") {
+        throw record.arg;
+      }
+
+      if (record.type === "break" ||
+          record.type === "continue") {
+        this.next = record.arg;
+      } else if (record.type === "return") {
+        this.rval = this.arg = record.arg;
+        this.method = "return";
+        this.next = "end";
+      } else if (record.type === "normal" && afterLoc) {
+        this.next = afterLoc;
+      }
+
+      return ContinueSentinel;
+    },
+
+    finish: function(finallyLoc) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.finallyLoc === finallyLoc) {
+          this.complete(entry.completion, entry.afterLoc);
+          resetTryEntry(entry);
+          return ContinueSentinel;
+        }
+      }
+    },
+
+    "catch": function(tryLoc) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.tryLoc === tryLoc) {
+          var record = entry.completion;
+          if (record.type === "throw") {
+            var thrown = record.arg;
+            resetTryEntry(entry);
+          }
+          return thrown;
+        }
+      }
+
+      // The context.catch method must only be called with a location
+      // argument that corresponds to a known catch block.
+      throw new Error("illegal catch attempt");
+    },
+
+    delegateYield: function(iterable, resultName, nextLoc) {
+      this.delegate = {
+        iterator: values(iterable),
+        resultName: resultName,
+        nextLoc: nextLoc
+      };
+
+      if (this.method === "next") {
+        // Deliberately forget the last sent value so that we don't
+        // accidentally pass it on to the delegate.
+        this.arg = undefined;
+      }
+
+      return ContinueSentinel;
+    }
+  };
+
+  // Regardless of whether this script is executing as a CommonJS module
+  // or not, return the runtime object so that we can declare the variable
+  // regeneratorRuntime in the outer scope, which allows this module to be
+  // injected easily by `bin/regenerator --include-runtime script.js`.
+  return exports;
+
+}(
+  // If this script is executing as a CommonJS module, use module.exports
+  // as the regeneratorRuntime namespace. Otherwise create a new empty
+  // object. Either way, the resulting object will be used to initialize
+  // the regeneratorRuntime variable at the top of this file.
+   true ? module.exports : 0
+));
+
+try {
+  regeneratorRuntime = runtime;
+} catch (accidentalStrictMode) {
+  // This module should not be running in strict mode, so the above
+  // assignment should always work unless something is misconfigured. Just
+  // in case runtime.js accidentally runs in strict mode, in modern engines
+  // we can explicitly access globalThis. In older engines we can escape
+  // strict mode using a global Function call. This could conceivably fail
+  // if a Content Security Policy forbids using Function, but in that case
+  // the proper solution is to fix the accidental strict mode problem. If
+  // you've misconfigured your bundler to force strict mode and applied a
+  // CSP to forbid Function, and you're not willing to fix either of those
+  // problems, please detail your unique predicament in a GitHub issue.
+  if (typeof globalThis === "object") {
+    globalThis.regeneratorRuntime = runtime;
+  } else {
+    Function("r", "regeneratorRuntime = r")(runtime);
+  }
+}
 
 
 /***/ }),
@@ -66470,6 +67581,22 @@ exports.staticRenderFns = staticRenderFns;
 
 /***/ }),
 
+/***/ "./node_modules/vue-axios/dist/vue-axios.esm.min.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/vue-axios/dist/vue-axios.esm.min.js ***!
+  \**********************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ plugin)
+/* harmony export */ });
+/* module decorator */ module = __webpack_require__.hmd(module);
+function _typeof(o){return(_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(o){return typeof o}:function(o){return o&&"function"==typeof Symbol&&o.constructor===Symbol&&o!==Symbol.prototype?"symbol":typeof o})(o)}function plugin(o,e){if(!plugin.installed)if(e){if(plugin.installed=!0,o.version&&o.version.split(".")[0]<3)Object.defineProperties(o.prototype,{axios:{get:function(){return e}},$http:{get:function(){return e}}});else{if(!(o.version&&o.version.split(".")[0]>=3))return void console.error("Unknown Vue version");o.config.globalProperties.axios=e,o.config.globalProperties.$http=e}o.axios=e,o.$http=e}else console.error("You have to install axios")}"object"==("undefined"==typeof exports?"undefined":_typeof(exports))?module.exports=plugin:"function"==typeof define&&__webpack_require__.amdO?define([],(function(){return plugin})):window.Vue&&window.axios&&window.Vue.use&&Vue.use(plugin,window.axios);
+
+/***/ }),
+
 /***/ "./resources/js/components/MainApp.vue":
 /*!*********************************************!*\
   !*** ./resources/js/components/MainApp.vue ***!
@@ -67452,7 +68579,156 @@ var render = function() {
                   )
                 ]),
                 _vm._v(" "),
-                _vm._m(0)
+                _c("div", { staticClass: "_overflow _table_div" }, [
+                  _c(
+                    "table",
+                    { staticClass: "_table" },
+                    [
+                      _vm._m(0),
+                      _vm._v(" "),
+                      _vm._l(_vm.archivos, function(archivo) {
+                        return _c(
+                          "tr",
+                          { key: archivo.id },
+                          [
+                            archivo.id != 1
+                              ? [
+                                  _c("td", [
+                                    _vm._v(
+                                      _vm._s(
+                                        archivo.folder_tramite[0].numeroFolder
+                                      )
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      _vm._s(archivo.registro_zonas[0].nombre)
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      _vm._s(archivo.numero_tramite[0].numero)
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      _vm._s(archivo.registro_tipo[0].nombre)
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "td",
+                                    {
+                                      staticClass: "_table_name",
+                                      staticStyle: {
+                                        "white-space": "nowrap",
+                                        width: "100%"
+                                      }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                    " +
+                                          _vm._s(
+                                            archivo.registro_personas[0].nombre
+                                          ) +
+                                          "\n                  "
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      "\n                    " +
+                                        _vm._s(
+                                          archivo.registro_sup_total[0].pivot
+                                            .superficieTotal
+                                        ) +
+                                        "\n                  "
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      "\n                    " +
+                                        _vm._s(
+                                          archivo.registro_sup_afectada[0].pivot
+                                            .superficieAfectada
+                                        ) +
+                                        "\n                  "
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      "\n                    " +
+                                        _vm._s(
+                                          archivo.registro_sup_avance[0].pivot
+                                            .superficieAvance
+                                        ) +
+                                        "\n                  "
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      "\n                    " +
+                                        _vm._s(
+                                          archivo.registro_sup_area_verde[0]
+                                            .pivot.superficieAreaVerde
+                                        ) +
+                                        "\n                  "
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      _vm._s(
+                                        archivo.catastro_tramite[0]
+                                          .codigoCatastral
+                                      )
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      _vm._s(archivo.fecha_resolucion[0].fecha)
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      "\n                    " +
+                                        _vm._s(
+                                          archivo.registro_resolucion[0]
+                                            .registroResolucion
+                                        ) +
+                                        "\n                  "
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(
+                                      _vm._s(
+                                        archivo.observacion_tramite[0]
+                                          .observacion
+                                      )
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _vm._m(1, true)
+                                ]
+                              : _vm._e()
+                          ],
+                          2
+                        )
+                      })
+                    ],
+                    2
+                  )
+                ])
               ]
             ),
             _vm._v(" "),
@@ -67461,7 +68737,13 @@ var render = function() {
             _c(
               "Modal",
               {
-                attrs: { title: "Nuevo Archivo", width: "1150" },
+                attrs: {
+                  styles: { top: "5vh" },
+                  title: "Nuevo Archivo",
+                  "mask-closable": false,
+                  closable: false,
+                  width: "1150"
+                },
                 model: {
                   value: _vm.modalActive,
                   callback: function($$v) {
@@ -67480,7 +68762,14 @@ var render = function() {
                       { attrs: { label: "Nombres y Apellidos" } },
                       [
                         _c("Input", {
-                          attrs: { placeholder: "Ingrese Nombres y Apellidos" }
+                          attrs: { placeholder: "Ingrese Nombres y Apellidos" },
+                          model: {
+                            value: _vm.registroPersona.nombre,
+                            callback: function($$v) {
+                              _vm.$set(_vm.registroPersona, "nombre", $$v)
+                            },
+                            expression: "registroPersona.nombre"
+                          }
                         })
                       ],
                       1
@@ -67494,7 +68783,18 @@ var render = function() {
                           { attrs: { label: "Nro. Folder" } },
                           [
                             _c("Input", {
-                              attrs: { placeholder: "Numero de Folder" }
+                              attrs: { placeholder: "Numero de Folder" },
+                              model: {
+                                value: _vm.folderTramite.numeroFolder,
+                                callback: function($$v) {
+                                  _vm.$set(
+                                    _vm.folderTramite,
+                                    "numeroFolder",
+                                    $$v
+                                  )
+                                },
+                                expression: "folderTramite.numeroFolder"
+                              }
                             })
                           ],
                           1
@@ -67512,27 +68812,26 @@ var render = function() {
                                 attrs: {
                                   filterable: "",
                                   placeholder: "Seleccione una zona"
+                                },
+                                model: {
+                                  value: _vm.zonaTramite.nombre,
+                                  callback: function($$v) {
+                                    _vm.$set(_vm.zonaTramite, "nombre", $$v)
+                                  },
+                                  expression: "zonaTramite.nombre"
                                 }
                               },
                               [
-                                _c(
-                                  "Option",
-                                  {
-                                    attrs: {
-                                      disabled: "",
-                                      selected: "",
-                                      value: ""
-                                    }
-                                  },
-                                  [_vm._v("Seleccione una zona")]
-                                ),
-                                _vm._v(" "),
                                 _c("Option", { attrs: { value: "Sacaba" } }, [
                                   _vm._v("Sacaba")
                                 ]),
                                 _vm._v(" "),
                                 _c("Option", { attrs: { value: "Cercado" } }, [
                                   _vm._v("Cercado")
+                                ]),
+                                _vm._v(" "),
+                                _c("Option", { attrs: { value: "Cercado" } }, [
+                                  _vm._v("Cercado2")
                                 ]),
                                 _vm._v(" "),
                                 _c("Option", { attrs: { value: "Norte" } }, [
@@ -67552,7 +68851,14 @@ var render = function() {
                           { attrs: { label: "Nro. Tramite" } },
                           [
                             _c("Input", {
-                              attrs: { placeholder: "Numero de tramite" }
+                              attrs: { placeholder: "Numero de tramite" },
+                              model: {
+                                value: _vm.numeroTramite.numero,
+                                callback: function($$v) {
+                                  _vm.$set(_vm.numeroTramite, "numero", $$v)
+                                },
+                                expression: "numeroTramite.numero"
+                              }
                             })
                           ],
                           1
@@ -67566,7 +68872,14 @@ var render = function() {
                       { attrs: { label: "Descripcion" } },
                       [
                         _c("Input", {
-                          attrs: { placeholder: "Ingrese descripcion" }
+                          attrs: { placeholder: "Ingrese descripcion" },
+                          model: {
+                            value: _vm.tipoTramite.nombre,
+                            callback: function($$v) {
+                              _vm.$set(_vm.tipoTramite, "nombre", $$v)
+                            },
+                            expression: "tipoTramite.nombre"
+                          }
                         })
                       ],
                       1
@@ -67580,7 +68893,18 @@ var render = function() {
                           { attrs: { label: "Sup. Aprobada" } },
                           [
                             _c("Input", {
-                              attrs: { placeholder: "Superficie Aprobada" }
+                              attrs: { placeholder: "Superficie Aprobada" },
+                              model: {
+                                value: _vm.unidadTramite.superficieTotal,
+                                callback: function($$v) {
+                                  _vm.$set(
+                                    _vm.unidadTramite,
+                                    "superficieTotal",
+                                    $$v
+                                  )
+                                },
+                                expression: "unidadTramite.superficieTotal"
+                              }
                             })
                           ],
                           1
@@ -67593,7 +68917,18 @@ var render = function() {
                           { attrs: { label: "Sup. Afectada" } },
                           [
                             _c("Input", {
-                              attrs: { placeholder: "Superficie Afectada" }
+                              attrs: { placeholder: "Superficie Afectada" },
+                              model: {
+                                value: _vm.unidadTramite.superficieAfectada,
+                                callback: function($$v) {
+                                  _vm.$set(
+                                    _vm.unidadTramite,
+                                    "superficieAfectada",
+                                    $$v
+                                  )
+                                },
+                                expression: "unidadTramite.superficieAfectada"
+                              }
                             })
                           ],
                           1
@@ -67606,7 +68941,18 @@ var render = function() {
                           { attrs: { label: "Sup. Avance" } },
                           [
                             _c("Input", {
-                              attrs: { placeholder: "Superficie Avance" }
+                              attrs: { placeholder: "Superficie Avance" },
+                              model: {
+                                value: _vm.unidadTramite.superficieAvance,
+                                callback: function($$v) {
+                                  _vm.$set(
+                                    _vm.unidadTramite,
+                                    "superficieAvance",
+                                    $$v
+                                  )
+                                },
+                                expression: "unidadTramite.superficieAvance"
+                              }
                             })
                           ],
                           1
@@ -67620,10 +68966,21 @@ var render = function() {
                       [
                         _c(
                           "FormItem",
-                          { attrs: { label: "Area Verde" } },
+                          { attrs: { label: "Sup. Area Verde" } },
                           [
                             _c("Input", {
-                              attrs: { placeholder: "Area Verde" }
+                              attrs: { placeholder: "Area Verde" },
+                              model: {
+                                value: _vm.unidadTramite.superficieAreaVerde,
+                                callback: function($$v) {
+                                  _vm.$set(
+                                    _vm.unidadTramite,
+                                    "superficieAreaVerde",
+                                    $$v
+                                  )
+                                },
+                                expression: "unidadTramite.superficieAreaVerde"
+                              }
                             })
                           ],
                           1
@@ -67636,7 +68993,18 @@ var render = function() {
                           { attrs: { label: "Cod. Catastral" } },
                           [
                             _c("Input", {
-                              attrs: { placeholder: "Codigo Catastral" }
+                              attrs: { placeholder: "Codigo Catastral" },
+                              model: {
+                                value: _vm.catastroTramite.codigoCatastral,
+                                callback: function($$v) {
+                                  _vm.$set(
+                                    _vm.catastroTramite,
+                                    "codigoCatastral",
+                                    $$v
+                                  )
+                                },
+                                expression: "catastroTramite.codigoCatastral"
+                              }
                             })
                           ],
                           1
@@ -67652,6 +69020,13 @@ var render = function() {
                               attrs: {
                                 type: "date",
                                 placeholder: "Seleccione fecha"
+                              },
+                              model: {
+                                value: _vm.fechaResolucion.fecha,
+                                callback: function($$v) {
+                                  _vm.$set(_vm.fechaResolucion, "fecha", $$v)
+                                },
+                                expression: "fechaResolucion.fecha"
                               }
                             })
                           ],
@@ -67662,16 +69037,123 @@ var render = function() {
                     ),
                     _vm._v(" "),
                     _c(
-                      "FormItem",
-                      { attrs: { label: "Observaciones" } },
+                      "Row",
                       [
-                        _c("Input", {
-                          attrs: {
-                            type: "textarea",
-                            autosize: { minRows: 2, maxRows: 5 },
-                            placeholder: "Ingrese Observaciones"
-                          }
-                        })
+                        _c(
+                          "FormItem",
+                          { attrs: { label: "Resolucion Municipal" } },
+                          [
+                            _c("Input", {
+                              attrs: { placeholder: "Resolucion Municipal" },
+                              model: {
+                                value: _vm.resolucionTramite.registroResolucion,
+                                callback: function($$v) {
+                                  _vm.$set(
+                                    _vm.resolucionTramite,
+                                    "registroResolucion",
+                                    $$v
+                                  )
+                                },
+                                expression:
+                                  "resolucionTramite.registroResolucion"
+                              }
+                            })
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c("Col", { attrs: { span: "1" } }),
+                        _vm._v(" "),
+                        _c(
+                          "Col",
+                          { attrs: { span: "14" } },
+                          [
+                            _c(
+                              "FormItem",
+                              { attrs: { label: "Responsable" } },
+                              [
+                                _c("Input", {
+                                  attrs: { placeholder: "Nombre responsable" },
+                                  model: {
+                                    value:
+                                      _vm.responsableTramite.nombreResponsable,
+                                    callback: function($$v) {
+                                      _vm.$set(
+                                        _vm.responsableTramite,
+                                        "nombreResponsable",
+                                        $$v
+                                      )
+                                    },
+                                    expression:
+                                      "responsableTramite.nombreResponsable"
+                                  }
+                                })
+                              ],
+                              1
+                            )
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "Row",
+                      [
+                        _c(
+                          "Col",
+                          { attrs: { span: "16" } },
+                          [
+                            _c(
+                              "FormItem",
+                              { attrs: { label: "Observaciones" } },
+                              [
+                                _c("Input", {
+                                  attrs: {
+                                    type: "textarea",
+                                    autosize: { minRows: 2, maxRows: 5 },
+                                    placeholder: "Ingrese Observaciones"
+                                  },
+                                  model: {
+                                    value: _vm.observacionesTramite.observacion,
+                                    callback: function($$v) {
+                                      _vm.$set(
+                                        _vm.observacionesTramite,
+                                        "observacion",
+                                        $$v
+                                      )
+                                    },
+                                    expression:
+                                      "observacionesTramite.observacion"
+                                  }
+                                })
+                              ],
+                              1
+                            )
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c("Col", { attrs: { span: "1" } }),
+                        _vm._v(" "),
+                        _c("Col", [
+                          _c("div", { staticClass: "custom-file" }, [
+                            _c("input", {
+                              staticClass: "custom-file-input",
+                              attrs: { type: "file", id: "customFile" }
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "label",
+                              {
+                                staticClass: "custom-file-label",
+                                attrs: { for: "customFile" }
+                              },
+                              [_vm._v("Subir plano")]
+                            )
+                          ])
+                        ])
                       ],
                       1
                     )
@@ -67683,13 +69165,27 @@ var render = function() {
                   "div",
                   { attrs: { slot: "footer" }, slot: "footer" },
                   [
-                    _c("Button", { attrs: { type: "defauld" } }, [
-                      _vm._v("Cancelar")
-                    ]),
+                    _c(
+                      "Button",
+                      {
+                        attrs: { type: "defauld" },
+                        on: {
+                          click: function($event) {
+                            _vm.modalActive = false
+                          }
+                        }
+                      },
+                      [_vm._v("Cancelar")]
+                    ),
                     _vm._v(" "),
-                    _c("Button", { attrs: { type: "primary" } }, [
-                      _vm._v("Aceptar")
-                    ])
+                    _c(
+                      "Button",
+                      {
+                        attrs: { type: "primary" },
+                        on: { click: _vm.registrarTramite }
+                      },
+                      [_vm._v("\n              Aceptar\n            ")]
+                    )
                   ],
                   1
                 )
@@ -67708,93 +69204,58 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "_overflow _table_div" }, [
-      _c("table", { staticClass: "_table" }, [
-        _c("tr", [
-          _c("th", [_vm._v("Nro. Folder")]),
-          _vm._v(" "),
-          _c("th", [_vm._v("Zona")]),
-          _vm._v(" "),
-          _c("th", [_vm._v("Nro. Tramite")]),
-          _vm._v(" "),
-          _c("th", [_vm._v("Descripcion")]),
-          _vm._v(" "),
-          _c("th", [_vm._v("Nombres y Apellidos")]),
-          _vm._v(" "),
-          _c("th", [_vm._v("Sup. Aprobada")]),
-          _vm._v(" "),
-          _c("th", [_vm._v("Sup. Afectada")]),
-          _vm._v(" "),
-          _c("th", [_vm._v("Sup. Avance")]),
-          _vm._v(" "),
-          _c("th", [_vm._v("Area Verde")]),
-          _vm._v(" "),
-          _c("th", [_vm._v("Cod. Catastral")]),
-          _vm._v(" "),
-          _c("th", [_vm._v("Fecha R. M.")]),
-          _vm._v(" "),
-          _c("th", [_vm._v("R. M.")]),
-          _vm._v(" "),
-          _c("th", [_vm._v("Observaciones")]),
-          _vm._v(" "),
-          _c("th", [_vm._v("Acciones")])
-        ]),
-        _vm._v(" "),
-        _c("tr", [
-          _c("td", [_vm._v("01/20")]),
-          _vm._v(" "),
-          _c("td", [_vm._v("Central")]),
-          _vm._v(" "),
-          _c("td", [_vm._v("002/2020")]),
-          _vm._v(" "),
-          _c("td", [_vm._v("Lote")]),
-          _vm._v(" "),
-          _c(
-            "td",
-            {
-              staticClass: "_table_name",
-              staticStyle: { "white-space": "nowrap", width: "100%" }
-            },
-            [_vm._v("\n                  Juan Luis Perez\n                ")]
-          ),
-          _vm._v(" "),
-          _c("td", [_vm._v("600")]),
-          _vm._v(" "),
-          _c("td", [_vm._v("100")]),
-          _vm._v(" "),
-          _c("td", [_vm._v("200")]),
-          _vm._v(" "),
-          _c("td", [_vm._v("100")]),
-          _vm._v(" "),
-          _c("td", [_vm._v("33")]),
-          _vm._v(" "),
-          _c("td", [_vm._v("27/09/215")]),
-          _vm._v(" "),
-          _c("td", [_vm._v("144/98")]),
-          _vm._v(" "),
-          _c("td", [_vm._v("Sin Planos")]),
-          _vm._v(" "),
-          _c("td", { staticStyle: { "white-space": "nowrap" } }, [
-            _c(
-              "button",
-              {
-                staticClass: "_btn _action_btn view_btn1",
-                attrs: { type: "button" }
-              },
-              [_vm._v("\n                    Ver\n                  ")]
-            ),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "_btn _action_btn edit_btn1",
-                attrs: { type: "button" }
-              },
-              [_vm._v("\n                    Editar\n                  ")]
-            )
-          ])
-        ])
-      ])
+    return _c("tr", [
+      _c("th", [_vm._v("Nro. Folder")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Zona")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Nro. Tramite")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Descripcion")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Nombres y Apellidos")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Sup. Aprobada")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Sup. Afectada")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Sup. Avance")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Area Verde")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Cod. Catastral")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Fecha R. M.")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("R. M.")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Observaciones")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Acciones")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", { staticStyle: { "white-space": "nowrap" } }, [
+      _c(
+        "button",
+        {
+          staticClass: "_btn _action_btn view_btn1",
+          attrs: { type: "button" }
+        },
+        [_vm._v("\n                      Ver\n                    ")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "_btn _action_btn edit_btn1",
+          attrs: { type: "button" }
+        },
+        [_vm._v("\n                      Editar\n                    ")]
+      )
     ])
   }
 ]
@@ -83367,6 +84828,11 @@ module.exports = JSON.parse('{"_from":"axios@^0.21","_id":"axios@0.21.4","_inBun
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/amd options */
+/******/ 	(() => {
+/******/ 		__webpack_require__.amdO = {};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
@@ -83403,6 +84869,21 @@ module.exports = JSON.parse('{"_from":"axios@^0.21","_id":"axios@0.21.4","_inBun
 /******/ 		})();
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/harmony module decorator */
+/******/ 	(() => {
+/******/ 		__webpack_require__.hmd = (module) => {
+/******/ 			module = Object.create(module);
+/******/ 			if (!module.children) module.children = [];
+/******/ 			Object.defineProperty(module, 'exports', {
+/******/ 				enumerable: true,
+/******/ 				set: () => {
+/******/ 					throw new Error('ES Modules may not assign module.exports or exports.*, Use ESM export syntax, instead: ' + module.id);
+/******/ 				}
+/******/ 			});
+/******/ 			return module;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -83437,23 +84918,34 @@ var __webpack_exports__ = {};
   !*** ./resources/js/app.js ***!
   \*****************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 /* harmony import */ var _routes_routes_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./routes/routes.js */ "./resources/js/routes/routes.js");
 /* harmony import */ var view_design__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! view-design */ "./node_modules/view-design/dist/iview.js");
 /* harmony import */ var view_design__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(view_design__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var view_design_dist_styles_iview_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! view-design/dist/styles/iview.css */ "./node_modules/view-design/dist/styles/iview.css");
+/* harmony import */ var _common_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./common.js */ "./resources/js/common.js");
+/* harmony import */ var vue_axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue-axios */ "./node_modules/vue-axios/dist/vue-axios.esm.min.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_6__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 
 
 
-vue__WEBPACK_IMPORTED_MODULE_3__["default"].use((view_design__WEBPACK_IMPORTED_MODULE_1___default()));
+
+vue__WEBPACK_IMPORTED_MODULE_4__["default"].use((view_design__WEBPACK_IMPORTED_MODULE_1___default()));
+vue__WEBPACK_IMPORTED_MODULE_4__["default"].mixin(_common_js__WEBPACK_IMPORTED_MODULE_3__["default"]); //axios
+
+
+
+vue__WEBPACK_IMPORTED_MODULE_4__["default"].use(vue_axios__WEBPACK_IMPORTED_MODULE_5__["default"], (axios__WEBPACK_IMPORTED_MODULE_6___default()));
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
-vue__WEBPACK_IMPORTED_MODULE_3__["default"].component('main-app', __webpack_require__(/*! ./components/MainApp.vue */ "./resources/js/components/MainApp.vue")["default"]);
-var app = new vue__WEBPACK_IMPORTED_MODULE_3__["default"]({
+vue__WEBPACK_IMPORTED_MODULE_4__["default"].component('main-app', __webpack_require__(/*! ./components/MainApp.vue */ "./resources/js/components/MainApp.vue")["default"]);
+var app = new vue__WEBPACK_IMPORTED_MODULE_4__["default"]({
   el: '#app',
-  router: _routes_routes_js__WEBPACK_IMPORTED_MODULE_0__["default"]
+  router: _routes_routes_js__WEBPACK_IMPORTED_MODULE_0__["default"] // render: h => h(app)
+
 });
 })();
 

@@ -13,8 +13,8 @@ class CreateFechaResolucionTable extends Migration
      */
     public function up()
     {
-        Schema::create('fecha_resolucion', function (Blueprint $table) {
-            $table->id('codFechaResolucion');
+        Schema::create('fecha_resolucions', function (Blueprint $table) {
+            $table->id();
             $table->string('fecha');
             $table->timestamps();
         });
@@ -27,6 +27,6 @@ class CreateFechaResolucionTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fecha_resolucion');
+        Schema::dropIfExists('fecha_resolucions');
     }
 }

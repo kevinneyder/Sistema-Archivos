@@ -13,10 +13,10 @@ class CreateTipoTramiteTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_tramite', function (Blueprint $table) {
-            $table->id('codTipoTramite');
+        Schema::create('tipo_tramites', function (Blueprint $table) {
+            $table->id();
             $table->string('nombre');
-            $table->string('descripcion');
+            $table->string('descripcion')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateTipoTramiteTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo_tramite');
+        Schema::dropIfExists('tipo_tramites');
     }
 }

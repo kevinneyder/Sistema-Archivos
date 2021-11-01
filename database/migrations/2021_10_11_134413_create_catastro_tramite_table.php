@@ -13,10 +13,10 @@ class CreateCatastroTramiteTable extends Migration
      */
     public function up()
     {
-        Schema::create('catastro_tramite', function (Blueprint $table) {
-            $table->id('codCatastroTramite');
-            $table->unsignedBigInteger('codRegistroTramite');
-            $table->foreign('codRegistroTramite')->references('codRegistroTramite')->on('registro_tramite');
+        Schema::create('catastro_tramites', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('registro_tramite_id');
+            $table->foreign('registro_tramite_id')->references('id')->on('registro_tramites');
             $table->string('codigoCatastral');
             $table->timestamps();
         });
@@ -29,6 +29,6 @@ class CreateCatastroTramiteTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('catastro_tramite');
+        Schema::dropIfExists('catastro_tramites');
     }
 }

@@ -13,10 +13,10 @@ class CreateNumeroTramiteTable extends Migration
      */
     public function up()
     {
-        Schema::create('numero_tramite', function (Blueprint $table) {
-            $table->id('codNumeroTramite');
-            $table->unsignedBigInteger('codRegistroTramite');
-            $table->foreign('codRegistroTramite')->references('codRegistroTramite')->on('registro_tramite');
+        Schema::create('numero_tramites', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('registro_tramite_id');
+            $table->foreign('registro_tramite_id')->references('id')->on('registro_tramites');
             $table->string('numero');
             $table->timestamps();
         });
@@ -29,6 +29,6 @@ class CreateNumeroTramiteTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('numero_tramite');
+        Schema::dropIfExists('numero_tramites');
     }
 }

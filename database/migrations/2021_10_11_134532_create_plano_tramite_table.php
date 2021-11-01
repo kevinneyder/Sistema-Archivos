@@ -13,8 +13,8 @@ class CreatePlanoTramiteTable extends Migration
      */
     public function up()
     {
-        Schema::create('plano_tramite', function (Blueprint $table) {
-            $table->id('codPlanoTramite');
+        Schema::create('plano_tramites', function (Blueprint $table) {
+            $table->id();
             $table->string('codigoPlano');
             $table->string('nombrePlano');
             $table->string('planoTramite');
@@ -29,6 +29,6 @@ class CreatePlanoTramiteTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('plano_tramite');
+        Schema::dropIfExists('plano_tramites');
     }
 }

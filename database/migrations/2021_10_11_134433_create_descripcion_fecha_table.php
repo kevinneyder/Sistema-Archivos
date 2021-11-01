@@ -13,12 +13,12 @@ class CreateDescripcionFechaTable extends Migration
      */
     public function up()
     {
-        Schema::create('descripcion_fecha', function (Blueprint $table) {
-            $table->id('codDescripcionFecha');
-            $table->unsignedBigInteger('codRegistroTramite');
-            $table->foreign('codRegistroTramite')->references('codRegistroTramite')->on('registro_tramite');
-            $table->unsignedBigInteger('codFechaResolucion');
-            $table->foreign('codFechaResolucion')->references('codFechaResolucion')->on('fecha_resolucion');
+        Schema::create('descripcion_fechas', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('registro_tramite_id');
+            $table->foreign('registro_tramite_id')->references('id')->on('registro_tramites');
+            $table->unsignedBigInteger('fecha_resolucion_id');
+            $table->foreign('fecha_resolucion_id')->references('id')->on('fecha_resolucions');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateDescripcionFechaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('descripcion_fecha');
+        Schema::dropIfExists('descripcion_fechas');
     }
 }
